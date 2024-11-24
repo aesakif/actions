@@ -12,3 +12,6 @@ jobs:
       # Step 2: List the contents of the repository
       - name: List Repository Contents
         run: ls -la
+
+      - name: docker build
+        run: docker build -t x:1 .
