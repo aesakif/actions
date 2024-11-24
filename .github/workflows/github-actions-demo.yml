@@ -16,17 +16,8 @@ jobs:
       # Step 2: Get build info (build number, commit ID, and date)
       - id: get-info
         run: |
-          build_number=${{ github.run_number }} >> $GITHUB_OUTPUT
-          commit_id=$(git rev-parse HEAD) >> $GITHUB_OUTPUT
-          commit_date=$(git log -1 --format=%cd --date=iso) >> $GITHUB_OUTPUT
+          echo "build_number=${{ github.run_number }}" >> $GITHUB_OUTPUT
+          echo "commit_id=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "commit_date=$(git log -1 --format=%cd --date=iso)" >> $GITHUB_OUTPUT
 
-  list:
-    needs: clone
-    runs-on: ubuntu-latest
-    steps:
-      # Step 1: Show build info
-      - name: Show Build Info
-        run: |
-          echo "Build Number: ${{ needs.clone.outputs.build-number }}"
-          echo "Commit ID: ${{ needs.clone.outputs.commit-id }}"
-          echo "Commit Date: ${{ needs.clone.outputs.commit-date }}"
+
