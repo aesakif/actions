@@ -28,6 +28,7 @@ jobs:
       - name: Commit updated Kubernetes YAML
         run: |
           git config --local user.name "aesakif"
+          git config --local user.email "akif@anwargroup.com"
           git add ./k8s
           git commit -m "Update image tag to ${{ github.run_number }}"
           git push https://${{ secrets.GH_TOKEN }}@github.com/aesakif/actions
