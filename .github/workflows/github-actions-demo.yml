@@ -2,25 +2,17 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  clone:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: List the contents of the repository
-      - name: List Repository Contents
-        run: ls -la
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: ls -ltra
 
-      # Step 3: Access secret values
-      - name: Access Secret
-        run: echo $SECRET_NAME
-        env:
-          SECRET_NAME: ${{ secrets.SECRET_NAME }}
-
-      # Step 4: Access variable values
-      - name: Access Variable
-        run: echo $VARIABLE_NAME
-        env:
-          MY_VARIABLE: ${{ vars.VARIABLE_NAME }}
