@@ -4,20 +4,15 @@ on: [push]
 jobs:
   clone:
     runs-on: ubuntu-latest
-    outputs:
-      build-number: ${{ steps.get-info.outputs.build_number }}
-      commit-id: ${{ steps.get-info.outputs.commit_id }}
-      commit-date: ${{ steps.get-info.outputs.commit_date }}
+
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
       # Step 2: Get build info (build number, commit ID, and date)
-      - id: get-info
-        run: |
-          echo "build_number=${{ github.run_number }}" >> $GITHUB_OUTPUT
-          echo "commit_id=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-          echo "commit_date=$(git log -1 --format=%cd --date=iso)" >> $GITHUB_OUTPUT
-
-
+      - name:  get-info
+        run: docker build -t test:${{ github.run_number }} .
+      - name: list images
+        run: docker images 
+         
