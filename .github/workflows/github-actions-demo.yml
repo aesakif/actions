@@ -12,7 +12,7 @@ jobs:
 
       # Step 2: Get build info (build number, commit ID, and date)
       - name:  get-info
-        run: docker build -t test:${{ github.run_number }} .
+        run: docker build -t ${{github.env.DOCKERHUB_APPNAME}}:${{ github.run_number }} .
       - name: list images
         run: docker images 
          
