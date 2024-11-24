@@ -6,6 +6,8 @@ metadata:
     app: gh-test
 spec:
   ports:
-  - port: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 5173
   selector:
     app: gh-test

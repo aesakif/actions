@@ -16,5 +16,5 @@ spec:
 
       - name: gh_test
         image: devopsaes/ghatestakif:30
-
-
+        ports:
+        - containerPort: 5173
