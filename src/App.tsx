@@ -22,11 +22,11 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to testasdasdasdsad asdad newenwnenasdasasdasdasddasdasdwe
+          Edit <code>src/App.tsx</code> and save to yo
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to qweqeqlearn more
+        Click on the Vite and React more
       </p>
     </>
   )
