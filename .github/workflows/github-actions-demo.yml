@@ -1,3 +1,4 @@
+
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
@@ -12,3 +13,11 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      # Step 2: Get build number, commit ID, and date
+      - id: get-info
+        run: |
+          echo "::set-output name=build_number::${{ github.run_number }}"
+          echo "::set-output name=commit_id::$(git rev-parse HEAD)"
+          echo "::set-output name=commit_date::$(git log -1 --format=%cd --date=iso)"
+  
