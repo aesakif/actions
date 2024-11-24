@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gh_test
+spec:
+  selector:
+    matchLabels:
+      app: gh_test
+  template:
+    metadata:
+      labels:
+        app: gh_test
+    spec:
+      containers:
+      - name: gh_test
+        image: devopsaes/ghatestakif:3
+
+
+
