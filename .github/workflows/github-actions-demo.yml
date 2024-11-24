@@ -4,15 +4,11 @@ on: [push]
 jobs:
   clone:
     runs-on: ubuntu-latest
+    outputs:
+      build-number: ${{ steps.get-info.outputs.build_number }}
+      commit-id: ${{ steps.get-info.outputs.commit_id }}
+      commit-date: ${{ steps.get-info.outputs.commit_date }}
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
-
-  list:
-    needs: clone
-    runs-on: ubuntu-latest
-    steps:
-      # Step 1: List the contents of the directory
-      - name: List Directory Contents
-        run: ls -ltra
