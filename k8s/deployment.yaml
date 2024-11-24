@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
 
+
       - name: gh-test
-        image: devopsaes/ghatestakif:33
-
-
+        image: devopsaes/ghatestakif:30
+        ports:
+        - containerPort: 5173
