@@ -15,6 +15,6 @@ spec:
       containers:
 
       - name: gh-test
-        image: devopsaes/ghatestakif:32
+        image: devopsaes/ghatestakif:33
 
 
