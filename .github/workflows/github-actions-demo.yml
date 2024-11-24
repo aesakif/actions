@@ -12,7 +12,6 @@ jobs:
   list:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
-        uses: ls -ltra
-
+      # Step 1: List the contents of the directory
+      - name: List Directory Contents
+        run: ls -ltra
