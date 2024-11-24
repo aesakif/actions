@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: gh-test
 spec:
+  replcas: 2
   selector:
     matchLabels:
       app: gh-test
