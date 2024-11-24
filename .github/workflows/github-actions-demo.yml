@@ -11,8 +11,9 @@ jobs:
         uses: actions/checkout@v3
 
       # Step 2: Get build info (build number, commit ID, and date)
-      - name:  get-info
-        run: docker build -t ${{ vars.DOCKERHUB_APPNAME }}:${{ github.run_number }} .
-      - name: list images
-        run: docker images 
+      - name:  docker build
+        run: docker build -t ${{ vars.DOCKERHUB_UNAME }}/${{ vars.DOCKERHUB_APPNAME }}:${{ github.run_number }} .
+      - name: docker push
+        run: docker push ${{ vars.DOCKERHUB_UNAME }}/${{ vars.DOCKERHUB_APPNAME }}:${{ github.run_number }}
          
+
