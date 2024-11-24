@@ -5,4 +5,10 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: List the contents of the repository
+      - name: List Repository Contents
+        run: ls -la
