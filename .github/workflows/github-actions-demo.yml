@@ -24,3 +24,14 @@ jobs:
 
       - name: update manifest file
         run: sed -i 's/${{ vars.DOCKERHUB_APPNAME }}.*/${{ vars.DOCKERHUB_APPNAME }}:${{ github.run_number }}/g' ./k8s/deployment.yaml
+
+
+      - name: Commit and push updated deployment file
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add ./k8s/deployment.yaml
+          git commit -m "Update deployment.yaml with new Docker image tag ${GITHUB_RUN_NUMBER}"
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
