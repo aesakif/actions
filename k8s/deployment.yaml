@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: gh_test
-        image: devopsaes/ghatestakif:23
+        image: devopsaes/ghatestakif:24
 
 
 
