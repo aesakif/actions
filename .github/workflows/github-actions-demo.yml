@@ -34,4 +34,4 @@ jobs:
           git commit -m "Update deployment.yaml with new Docker image tag ${GITHUB_RUN_NUMBER}"
           git push origin HEAD:main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
