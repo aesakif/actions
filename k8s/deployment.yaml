@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gh_test
+  name: gh-test
 spec:
   selector:
     matchLabels:
-      app: gh_test
+      app: gh-test
   template:
     metadata:
       labels:
-        app: gh_test
+        app: gh-test
     spec:
       containers:
+
       - name: gh_test
         image: devopsaes/ghatestakif:30
-
 
 
