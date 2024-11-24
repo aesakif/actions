@@ -13,5 +13,14 @@ jobs:
       - name: List Repository Contents
         run: ls -la
 
-      - name: docker build
-        run: docker build -t x:1 .
+      # Step 3: Access secret values
+      - name: Access Secret
+        run: echo $SECRET_NAME
+        env:
+          SECRET_NAME: ${{ secrets.SECRET_NAME }}
+
+      # Step 4: Access variable values
+      - name: Access Variable
+        run: echo $VARIABLE_NAME
+        env:
+          MY_VARIABLE: ${{ vars.VARIABLE_NAME }}
